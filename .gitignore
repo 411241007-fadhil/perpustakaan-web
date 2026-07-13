@@ -1,0 +1,21 @@
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Log
+*.log
+
+# Environment
+.env
+
+# Composer
+/vendor/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
