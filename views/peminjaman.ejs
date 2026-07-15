@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+<div class="card-header-theme">Log Transaksi Peminjaman Buku</div>
+<div class="content-box">
+    <div class="action-bar" style="justify-content: flex-end;">
+        <a href="/modules/peminjaman/tambah" class="btn btn-success">+ Tambah Peminjaman</a>
+    </div>
+    <p style="margin-bottom: 15px;">Total Transaksi: <%= total %></p>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Judul Buku</th>
+                <th>Nama Peminjam</th>
+                <th>Tanggal Pinjam</th>
+                <th>Tanggal Kembali</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% peminjaman.forEach((item, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= item.judul %></td>
+                    <td><%= item.peminjam %></td>
+                    <td><%= item.tanggal_pinjam %></td>
+                    <td><%= item.tanggal_kembali %></td>
+                    <td>
+                        <span class="badge <%= item.status === 'Dipinjam' ? 'badge-warning' : 'badge-success' %>">
+                            <%= item.status %>
+                        </span>
+                    </td>
+                    <td>
+                        <% if (item.status === 'Dipinjam') { %>
+                            <a href="/modules/peminjaman/kembali/<%= item.id_pinjam %>" onclick="konfirmasiKembalikan(event)" class="btn btn-success" style="padding: 4px 8px;">Kembalikan</a>
+                        <% } %>
+                        <a href="/modules/peminjaman/edit/<%= item.id_pinjam %>" class="btn btn-warning" style="padding: 4px 8px;">Edit</a>
+                        <a href="/modules/peminjaman/hapus/<%= item.id_pinjam %>" onclick="konfirmasiHapus(event)" class="btn btn-danger" style="padding: 4px 8px;">Hapus</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+<%- include('partials/footer') %>

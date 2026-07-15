@@ -1,0 +1,31 @@
+{
+  "name": "perpustakaan-web",
+  "version": "1.0.0",
+  "description": "Aplikasi web sederhana untuk mengelola data perpustakaan kampus menggunakan Java Script dan MySQL.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/411241007-fadhil/perpustakaan-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/411241007-fadhil/perpustakaan-web/issues"
+  },
+  "homepage": "https://github.com/411241007-fadhil/perpustakaan-web#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "mysql2": "^3.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

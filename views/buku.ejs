@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+<div class="card-header-theme">Katalog Data Buku</div>
+<div class="content-box">
+    <div class="action-bar">
+        <form action="/modules/buku" method="GET" class="search-form">
+            <input type="text" name="cari" placeholder="Cari berdasarkan judul atau penulis..." class="search-input">
+            <button type="submit" class="btn btn-primary">Cari</button>
+            <a href="/modules/buku" class="btn btn-secondary">Reset</a>
+        </form>
+        <a href="/modules/buku/tambah" class="btn btn-success">+ Tambah Buku</a>
+    </div>
+    <p style="margin-bottom: 15px;">Total Buku Tersedia: <%= total %></p>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Judul</th>
+                <th>Penulis</th>
+                <th>Penerbit</th>
+                <th>Tahun</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% buku.forEach((item, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= item.judul %></td>
+                    <td><%= item.penulis %></td>
+                    <td><%= item.penerbit %></td>
+                    <td><%= item.tahun_terbit %></td>
+                    <td><%= item.stok %></td>
+                    <td>
+                        <a href="/modules/buku/edit/<%= item.id_buku %>" class="btn btn-warning">Edit</a>
+                        <a href="/modules/buku/hapus/<%= item.id_buku %>" onclick="konfirmasiHapus(event)" class="btn btn-danger">Hapus</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+<%- include('partials/footer') %>

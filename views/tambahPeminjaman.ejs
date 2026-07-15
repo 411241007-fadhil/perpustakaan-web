@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<div class="card-header-theme">Mulai Transaksi Peminjaman Baru</div>
+<div class="content-box">
+    <form action="/modules/peminjaman/tambah" method="POST">
+        <div class="form-group">
+            <label>Pilih Buku</label>
+            <select name="id_buku" class="form-control" required>
+                <option value="">-- Pilih Judul Buku --</option>
+                <% buku.forEach(item => { %>
+                    <option value="<%= item.id_buku %>"><%= item.judul %> (Stok: <%= item.stok %>)</option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Pilih Anggota Peminjam</label>
+            <select name="id_peminjam" class="form-control" required>
+                <option value="">-- Pilih Nama Mahasiswa --</option>
+                <% peminjam.forEach(item => { %>
+                    <option value="<%= item.id_peminjam %>"><%= item.nama %> - <%= item.nim %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Tanggal Pinjam</label>
+            <input type="date" name="tanggal_pinjam" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Batas Tanggal Pengembalian</label>
+            <input type="date" name="tanggal_kembali" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Proses Transaksi Peminjaman</button>
+        <a href="/modules/peminjaman" class="btn btn-secondary">Batal</a>
+    </form>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7f5;
+    color: #2b2b2b;
+    /* Animasi fade-in halus saat halaman dimuat */
+    animation: fadeInPage 0.5s ease-out;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navigasi Header */
+.navbar {
+    background-color: #1b4332;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(27, 67, 50, 0.15);
+}
+
+.navbar .brand {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-links a {
+    color: #d8f3dc;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    padding: 5px 8px;
+    border-radius: 4px;
+    /* Efek transisi halus untuk link navigasi */
+    transition: all 0.25s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Kontainer Utama */
+.container {
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Kotak Konten */
+.card-header-theme {
+    background-color: #2d6a4f;
+    color: white;
+    padding: 18px 25px;
+    border-radius: 12px 12px 0 0;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Kotak Konten Utama */
+.content-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    margin-bottom: 80px;
+}
+
+/* Grid Statistik Dashboard */
+.stats-grid {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Kartu Statistik */
+.stats-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 25px;
+    border-left: 6px solid #2d6a4f;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    /* Transisi untuk efek melayang saat diarahkan kursor */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.stats-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(45, 106, 79, 0.08);
+    background-color: #fafdfb;
+}
+
+.stats-card h3 {
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+}
+
+.stats-card p {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1b4332;
+}
+
+/* Bar Aksi (Pencarian dan Tombol Tambah) */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.search-form {
+    display: flex;
+    gap: 12px;
+}
+
+.search-input {
+    padding: 10px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    width: 320px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.search-input:focus {
+    border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+/* Tombol Komponen */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    /* Transisi interaktif untuk tombol */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary { 
+    background-color: #40916c; 
+    color: white; 
+}
+.btn-primary:hover {
+    background-color: #2d6a4f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(64, 145, 108, 0.2);
+}
+
+.btn-success { 
+    background-color: #2d6a4f; 
+    color: white; 
+}
+.btn-success:hover {
+    background-color: #1b4332;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(45, 106, 79, 0.2);
+}
+
+.btn-warning { 
+    background-color: #b7efc5; 
+    color: #1b4332; 
+}
+.btn-warning:hover {
+    background-color: #95d5b2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(183, 239, 197, 0.3);
+}
+
+.btn-danger { 
+    background-color: #e63946; 
+    color: white; 
+}
+.btn-danger:hover {
+    background-color: #c1121f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(230, 57, 70, 0.2);
+}
+
+.btn-secondary { 
+    background-color: #6c757d; 
+    color: white; 
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Tombol Aktif Saat Diklik (Efek Menekan) */
+.btn:active {
+    transform: translateY(0);
+    filter: brightness(0.9);
+}
+
+/* Tabel Data */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+th {
+    background-color: #1b4332;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eef2f0;
+    background-color: #ffffff;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+/* Efek Hover Baris Tabel */
+tr:hover td {
+    background-color: #f1f6f3;
+}
+
+/* Formulir Input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-control:focus {
+    border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+/* Status Badge */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.badge-success { 
+    background-color: #d8f3dc; 
+    color: #1b4332; 
+}
+
+.badge-warning { 
+    background-color: #ffe3a8; 
+    color: #b07d00; 
+}
+
+/* Footer Halaman */
+footer {
+    text-align: center;
+    padding: 18px;
+    background-color: #1b4332;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}

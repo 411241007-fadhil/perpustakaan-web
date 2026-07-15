@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<div class="card-header-theme">Data Anggota Peminjam</div>
+<div class="content-box">
+    <div class="action-bar" style="justify-content: flex-end;">
+        <a href="/modules/peminjam/tambah" class="btn btn-success">+ Tambah Peminjam</a>
+    </div>
+    <p style="margin-bottom: 15px;">Total Peminjam Terdaftar: <%= total %></p>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Peminjam</th>
+                <th>NIM</th>
+                <th>Jurusan</th>
+                <th>No HP</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% peminjam.forEach((item, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= item.nama %></td>
+                    <td><%= item.nim %></td>
+                    <td><%= item.jurusan %></td>
+                    <td><%= item.no_hp %></td>
+                    <td>
+                        <a href="/modules/peminjam/edit/<%= item.id_peminjam %>" class="btn btn-warning">Edit</a>
+                        <a href="/modules/peminjam/hapus/<%= item.id_peminjam %>" onclick="konfirmasiHapus(event)" class="btn btn-danger">Hapus</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+<%- include('partials/footer') %>

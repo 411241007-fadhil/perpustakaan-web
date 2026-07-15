@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<div class="card-header-theme">Dashboard Utama</div>
+<div class="content-box">
+    <h2>Selamat datang di Sistem Informasi Perpustakaan</h2>
+    <p style="margin-top: 5px; color: #666;">Pantau status dan data statistik perpustakaan secara real-time di bawah ini.</p>
+    
+    <div class="stats-grid">
+        <div class="stats-card">
+            <h3>Total Judul Buku</h3>
+            <p><%= totalBuku %></p>
+        </div>
+        <div class="stats-card" style="border-left-color: #40916c;">
+            <h3>Total Anggota Peminjam</h3>
+            <p><%= totalPeminjam %></p>
+        </div>
+        <div class="stats-card" style="border-left-color: #ffb703;">
+            <h3>Buku Sedang Dipinjam</h3>
+            <p><%= totalAktif %></p>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer') %>

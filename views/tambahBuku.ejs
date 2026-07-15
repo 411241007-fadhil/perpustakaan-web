@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<div class="card-header-theme">Tambah Data Buku Baru</div>
+<div class="content-box">
+    <form action="/modules/buku/tambah" method="POST">
+        <div class="form-group">
+            <label>Judul Buku</label>
+            <input type="text" name="judul" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Penulis</label>
+            <input type="text" name="penulis" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Penerbit</label>
+            <input type="text" name="penerbit" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Tahun Terbit</label>
+            <input type="number" name="tahun" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Jumlah Stok</label>
+            <input type="number" name="stok" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Simpan Data Buku</button>
+        <a href="/modules/buku" class="btn btn-secondary">Batal</a>
+    </form>
+</div>
+<%- include('partials/footer') %>
